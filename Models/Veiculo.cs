@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace DriveNow.API.Models
 {
+    [Index(nameof(Placa), IsUnique = true)]
     public class Veiculo
     {
         public int Id { get; set; }
@@ -18,6 +20,6 @@ namespace DriveNow.API.Models
         [Required(ErrorMessage = "Agência é obrigatória.")]
         public int AgenciaId { get; set; }
 
-        public Agencia Agencia { get; set; }
+        public Agencia? Agencia { get; set; }
     }
 }

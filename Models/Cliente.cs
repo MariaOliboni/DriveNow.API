@@ -1,7 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace DriveNow.API.Models
 {
+    [Index(nameof(Email), IsUnique = true)]
+    [Index(nameof(Cpf), IsUnique = true)]
     public class Cliente
     {
         public int Id { get; set; }
