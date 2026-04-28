@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DriveNow.API.Models
 {
@@ -21,5 +22,12 @@ namespace DriveNow.API.Models
         public int AgenciaId { get; set; }
 
         public Agencia? Agencia { get; set; }
+
+        public string? FotoUrl { get; set; }
+        [NotMapped]
+        public IFormFile FotoUpload
+        {
+            get; set;
+        }
     }
 }
